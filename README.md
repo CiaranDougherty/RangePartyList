@@ -3,7 +3,7 @@ An algorithm for allocating multiple seats using Approval or Range voting system
 
 Based on Lars Edvard Phragmen's Unordered Method (originally written ~1895 c.e.), this code means to allocate multiple seats using Range or Approval voting methods.
 
-The basic principle is that whenever a candidate is seated, that "uses up" some of the voting power of the ballots that seated them, but still can contribute some amount to later candidates.  This is accomplished by dividing the vote contribution by 1+W, where W is proportional to that ballot group's contribution to the candidate's vote total.
+The basic principle is that whenever a candidate is seated, that "uses up" some of the voting power of the ballots that seated them, but still can contribute some amount to later candidates.  This is accomplished by dividing the vote contribution by 1+W, where W is proportional to that ballot group's contribution to the vote totals of candidates that ballot has helped to seat.
 
 Where Phragmen's system sums votes of all ballots containing a paritcular candidate A, and divides them all by the sum of the weights (W) for all those ballots, mine only applies those weights to the ballots that originally incurred those weights.  Additionally, where Phragmen distributes the weight of seating candidate A *and* that candidate A voters previously accrued proprtionately to their support for A, I only ever distribute the weight of A, never redistributing weights, only ever adding to them.
 
