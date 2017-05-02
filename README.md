@@ -1,3 +1,14 @@
+# Update 2017-05-02
+
+Turns out my algorithm's failure of the "Consistency" voting criterion is *way* bigger a problem than original anticipated.  What's more, the problem is only amplified by increased numbers of candidates and/or breadth of possible scores.  That defeats the purpose of my attempt to improve things, and I consider it wholly unacceptable.
+
+The problem arose from my adjusting weights based on each ballot-grouping's proportion of votes that seated that candidate.  While improving Monotonicity, it was too strong an adjustment away from the flaws in Phragmén's method.  One solution I'm considering is to weight according to how much each ballot/voter *likes* the candidate that was just seated, not the total.  This appears (at least superficially) to be derivative of D'Hondt's method (at least for Approval voting).  Looking into that presently.
+
+The other potential solution I am considering is to abandon weights altogether.  Instead, I am considering "subtracting" from all their scores as a function of their support for the candidates that have been seated.  That is, upon seating a candidate to a N seat council, all scores would be decreased by (degree of support)/N.
+
+
+
+
 # RangePartyList
 An algorithm for allocating multiple seats using Approval or Range voting systems.
 
@@ -9,6 +20,8 @@ Where Phragmen's system sums votes of all ballots containing a paritcular candid
 
 I believe that, because of these differnces, my algorithm likely meets Montonicity Criterion of voting systems (q.v. "Monotonicity Criterion" on Wikpedia) where Phragmen's original algorithm does not.
 
-If it does meet that criterion, if it can eliminate favorite betrayal, I would love for it to be implemented far and wide, as I believe that favorite betrayal is antithetical to democracy.
+If it does meet that criterion, if it can eliminate Favorite Betrayal, I would love for it to be implemented far and wide, as I believe that Favorite Betrayal is antithetical to democracy.
 
 I'll decide on a license when I can wrap my head around the implications thereof.
+
+
